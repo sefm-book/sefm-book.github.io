@@ -29,7 +29,7 @@ View individual files online:
 
 PDFs on CASL:
 - [CoFi note M-6](additional-material/chapter-4/m-6.pdf), 2002, by Markus Roggenbach and Till Mossakowski
-- [Hets User Guide](additional-material/chapter-4/HetsUserGuide.pdf), version 0.99, 2014, by Till Mossakowski, Christian Maeder, and Mihai Codescu
+- [Hets User Guide](https://github.com/spechub/Hets/blob/master/doc/UserGuide.pdf) by Till Mossakowski, Christian Maeder, and Mihai Codescu
 
 ## Chapter 8
 Source files: [chapter-8.zip](additional-material/chapter-8/chapter-8.zip)
