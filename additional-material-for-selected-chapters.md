@@ -6,7 +6,7 @@ Here you will find source files of the specifications discussed in the book and 
 
 Further reading:
 
-- [Formal Methods for Safe and Secure Computers Systems](additional-material/chapter-1/garavel-2013.pdf), 2013, editor Hubert Garavel. BSI Study 875. Federal Office for Information Security
+- [Formal Methods for Safe and Secure Computers Systems](additional-material/chapter-1/garavel-2013.pdf), 2013, editor Hubert Garavel. BSI Study 875. Federal Office for Information Security.
 
 ## Chapter 3
 Source files: [chapter-3.zip](additional-material/chapter-3/chapter-3.zip)
@@ -34,8 +34,8 @@ View individual files online:
 - [telephoneDatabase.casl](additional-material/chapter-4/telephoneDatabase.md)
 
 PDFs on CASL:
-- [CoFi note M-6](additional-material/chapter-4/m-6.pdf), 2002, by Markus Roggenbach and Till Mossakowski
-- [Hets User Guide](https://github.com/spechub/Hets/blob/master/doc/UserGuide.pdf) by Till Mossakowski, Christian Maeder, and Mihai Codescu
+- [CoFi note M-6](additional-material/chapter-4/m-6.pdf), 2002, by Markus Roggenbach and Till Mossakowski.
+- [Hets User Guide](https://github.com/spechub/Hets/blob/master/doc/UserGuide.pdf) by Till Mossakowski, Christian Maeder, and Mihai Codescu.
 
 ## Chapter 8
 Source files: [chapter-8.zip](additional-material/chapter-8/chapter-8.zip)
@@ -45,10 +45,10 @@ View individual files online:
 - [nsl-protocol.csp](additional-material/chapter-8/nsl-protocol.md)
 
 Further reading:
-- [Attacks on RFID Protocols](https://discovery.dundee.ac.uk/ws/files/17172566/310.pdf), 2009, by Ton van Deursen and Saša Radomirovi
-- [A Survey of Authentication Protocol Literature: Version 1.0](https://eprints.whiterose.ac.uk/72494/1/drareviewps.pdf), 1997, by John Clark and Jeremy Jacob
-- [The Unforeseen Evolution of Theorem Proving in ARM Processor Verification](additional-material/chapter-8/gordon-2015.pdf), 28th April 2015, by Michael Gordon. Talk at Swansea University. [Slides](additional-material/chapter-8/gordon-2015-slides.pdf)
-- [The Triumph of Types: Principia Mathematica’s Impact on Computer Science](additional-material/chapter-8/constable.pdf), by Robert L. Constable. Unpublished
+- [Attacks on RFID Protocols](https://discovery.dundee.ac.uk/ws/files/17172566/310.pdf), 2009, by Ton van Deursen and Saša Radomirovi.
+- [A Survey of Authentication Protocol Literature: Version 1.0](https://eprints.whiterose.ac.uk/72494/1/drareviewps.pdf), 1997, by John Clark and Jeremy Jacob.
+- [The Unforeseen Evolution of Theorem Proving in ARM Processor Verification](additional-material/chapter-8/gordon-2015.pdf), 28th April 2015, by Michael Gordon. Talk at Swansea University. [Slides](additional-material/chapter-8/gordon-2015-slides.pdf).
+- [The Triumph of Types: Principia Mathematica’s Impact on Computer Science](additional-material/chapter-8/constable.pdf), by Robert L. Constable. Unpublished.
 
 ## Conclusion
 Further reading:
