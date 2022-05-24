@@ -2,6 +2,12 @@
 
 Here you will find source files of the specifications discussed in the book and hints for additional reading.
 
+## Chapter 1
+
+Further reading:
+
+- [Formal Methods for Safe and Secure Computers Systems](additional-material/chapter-1/garavel-2013.pdf), 2013, editor Hubert Garavel. BSI Study 875. Federal Office for Information Security
+
 ## Chapter 3
 Source files: [chapter-3.zip](additional-material/chapter-3/chapter-3.zip)
 
