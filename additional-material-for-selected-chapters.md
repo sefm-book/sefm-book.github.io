@@ -41,6 +41,7 @@ View individual files online:
 Further reading:
 - [Attacks on RFID Protocols](https://discovery.dundee.ac.uk/ws/files/17172566/310.pdf), 2009, by Ton van Deursen and Saša Radomirovi
 - [A Survey of Authentication Protocol Literature: Version 1.0](https://eprints.whiterose.ac.uk/72494/1/drareviewps.pdf), 1997, by John Clark and Jeremy Jacob
+- [The Unforeseen Evolution of Theorem Proving in ARM Processor Verification](additional-material/chapter-8/gordon-2015.pdf), 28th April 2015, by Michael Gordon. Talk at Swansea University. [Slides](additional-material/chapter-8/gordon-2015-slides.pdf)
 
 ## Conclusion
 Further reading:
