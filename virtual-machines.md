@@ -8,4 +8,4 @@ To use these, download the virtual machine ova file and open it with VirtualBox.
 
 * Version September 2022
   * Download: Coming soon
-  * Contains: The tools FDR, Hets, and Congu; the [source files](additional-material-for-selected-chapters.md) for the Chapters 3, 4 and 8.
+  * Contains: The tools FDR, Hets, and Congu (installed  and ready to use); the [source files](additional-material-for-selected-chapters.md) for the Chapters 3, 4 and 8.
