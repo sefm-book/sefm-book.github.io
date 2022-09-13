@@ -2,13 +2,13 @@
 
 Here you will find source files of the specifications discussed in the book and hints for additional reading.
 
-## Chapter 1
+## Chapter 1: Formal Methods
 
 Further reading:
 
 - [Formal Methods for Safe and Secure Computers Systems](additional-material/chapter-1/garavel-2013.pdf), 2013, editor Hubert Garavel. BSI Study 875. Federal Office for Information Security.
 
-## Chapter 3
+## Chapter 3: The Process Algebra CSP
 Source files: [chapter-3.zip](additional-material/chapter-3/chapter-3.zip)
 
 View individual files online:
@@ -25,7 +25,7 @@ View individual files online:
 - [commSystem.csp](additional-material/chapter-3/commSystem.md)
 - [candy.csp](additional-material/chapter-3/candy.md)
 
-## Chapter 4
+## Chapter 4: Algebraic Specification in CASL
 Source files: [chapter-4.zip](additional-material/chapter-4/chapter-4.zip)
 
 View individual files online:
@@ -37,7 +37,7 @@ PDFs on CASL:
 - [CoFi note M-6](additional-material/chapter-4/m-6.pdf), 2002, by Markus Roggenbach and Till Mossakowski.
 - [Hets User Guide](https://github.com/spechub/Hets/blob/master/doc/UserGuide.pdf) by Till Mossakowski, Christian Maeder, and Mihai Codescu.
 
-## Chapter 8
+## Chapter 8: Formal Verification of Security Protocols
 Source files: [chapter-8.zip](additional-material/chapter-8/chapter-8.zip)
 
 View individual files online:
@@ -48,7 +48,7 @@ Further reading:
 - [Attacks on RFID Protocols](https://discovery.dundee.ac.uk/ws/files/17172566/310.pdf), 2009, by Ton van Deursen and Saša Radomirovi.
 - [A Survey of Authentication Protocol Literature: Version 1.0](https://eprints.whiterose.ac.uk/72494/1/drareviewps.pdf), 1997, by John Clark and Jeremy Jacob.
 
-## Chapter 9
+## Chapter 9: Origins and Development of Formal Methods
 
 Further reading:
 - [The Unforeseen Evolution of Theorem Proving in ARM Processor Verification](additional-material/chapter-8/gordon-2015.pdf), 28th April 2015, by Michael Gordon. Talk at Swansea University. [Slides](additional-material/chapter-8/gordon-2015-slides.pdf).
