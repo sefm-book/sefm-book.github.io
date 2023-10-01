@@ -1,0 +1,15 @@
+%% This work is licensed under a Creative Commons
+%% Attribution-ShareAlike 4.0 International License.
+%% http://creativecommons.org/licenses/by-sa/4.0/
+
+%% Authors: Liam O'Reilly and Markus Roggenbach
+
+spec DeMorgan =
+  preds A, B: ()
+then %implies
+     . not (A \/ B) <=> (not A) /\ (not B) %(Law-1)%
+     . not (A /\ B) <=> (not A) \/ (not B) %(Law-2)%
+then %implies
+     . not (A \/ B) <=> (not A) \/ (not B) %(WrongEquivalence-3)%
+     . not (A /\ B) <=> (not A) /\ (not B) %(WrongEquivalence-4)%
+end
