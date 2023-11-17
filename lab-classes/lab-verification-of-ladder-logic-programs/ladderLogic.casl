@@ -1,0 +1,182 @@
+%% This work is licensed under a Creative Commons
+%% Attribution-ShareAlike 4.0 International License.
+%% http://creativecommons.org/licenses/by-sa/4.0/
+
+%% Authors: Liam O'Reilly and Markus Roggenbach
+
+library pelicanCrossing
+
+%%%%%%%%%%%%%%%%%%%%%
+%% 4.3.2 Ladder Logic
+%%%%%%%%%%%%%%%%%%%%%
+
+spec TransitionRelation =
+  preds button, request, old_sh, old_sl, sh, sl, pg, pgf, pr, tg, ta, tr, taf: ();
+  preds button', request', old_sh', old_sl', sh', sl', pg', pgf', pr', tg', ta', tr', taf': ();
+  . old_sh' <=> sh;
+  . old_sl' <=> sl;
+  . sh' <=>  (old_sh' /\ not old_sl') \/  (not old_sh' /\ old_sl');
+  . sl' <=> (old_sh' /\ not old_sl') \/  (not request /\ button /\ not old_sl');
+  . request' <=> (button /\ not old_sh') \/ (button /\ not old_sl') \/ (request /\ not button /\ not old_sh') \/ (request /\ not button /\ not old_sl');
+  . pg' <=> old_sh' /\ not old_sl';
+  . pgf' <=> old_sh' /\ old_sl';
+  . pr' <=> not old_sh';
+  . tg' <=> (not old_sh' /\ not old_sl') 
+                   \/ 
+                 (not button /\ not request); 
+  . ta' <=> not old_sh' /\ old_sl'; 
+  . tr' <=> old_sh' /\ not old_sl';
+  . taf' <=> old_sh' /\ old_sl';
+end
+
+spec TransitionRelationAlternative =
+  preds button, request, old_sh, old_sl, sh, sl, pg, pgf, pr, tg, ta, tr, taf: ();
+then %def
+    pred old_sh' <=> sh;
+then %def
+    pred old_sl' <=> sl;
+then %def
+    pred sh' <=>  (old_sh' /\ not old_sl') \/  (not old_sh' /\ old_sl');
+then %def
+    pred sl' <=> (old_sh' /\ not old_sl') \/  (not request /\ button /\ not old_sl');
+then %def
+    pred request' <=> (button /\ not old_sh') \/ (button /\ not old_sl') \/ (request /\ not button /\ not old_sh') \/ (request /\ not button /\ not old_sl');
+then %def
+    pred pg' <=> old_sh' /\ not old_sl';
+then %def
+    pred pgf' <=> old_sh' /\ old_sl';
+then %def
+    pred pr' <=> not old_sh';
+then %def
+    pred tg' <=> (not old_sh' /\ not old_sl') 
+                   \/ 
+                 (not button /\ not request); 
+then %def
+    pred ta' <=> not old_sh' /\ old_sl'; 
+then %def
+    pred tr' <=> old_sh' /\ not old_sl';
+then %def
+    pred taf' <=> old_sh' /\ old_sl';
+then %cons
+    pred button': ();
+end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 4.3.4 Inductive verification of Ladder Logic programs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+spec InitialStatesAreSafe =
+  TransitionRelation 
+then
+  axiom
+  not request /\ not sh  /\ not sl /\ not old_sh /\ not old_sl /\ not pg /\ not pgf /\ not pr /\ not tg /\ not ta /\ not tr /\ not taf;
+then %implies  
+  axiom
+     ((     tg' /\ not ta' /\ not  tr' /\ not taf') \/
+      ( not tg' /\     ta' /\ not  tr' /\ not taf') \/
+      ( not tg' /\ not ta' /\      tr' /\ not taf') \/
+      ( not tg' /\ not ta' /\ not  tr' /\     taf'))  
+     %(initial states are safe for vehicles)%
+
+     ((     pg' /\ not pgf' /\ not  pr') \/
+      ( not pg' /\     pgf' /\ not  pr') \/
+      ( not pg' /\ not pgf' /\      pr'))
+     %(initial states are safe for pedestrians)%
+end
+
+spec TransitionsAndPedestrianSafety =
+   TransitionRelation 
+then %implies
+  axiom
+     ((     pg /\ not pgf /\ not  pr) \/
+      ( not pg /\     pgf /\ not  pr) \/
+      ( not pg /\ not pgf /\      pr))
+     =>
+     ((     pg' /\ not pgf' /\ not  pr') \/
+      ( not pg' /\     pgf' /\ not  pr') \/
+      ( not pg' /\ not pgf' /\      pr'))
+   %(safety is preserved for pedestrians)%;
+end
+
+spec TransitionsAndTrafficSafety = 
+   TransitionRelation 
+then %implies
+  axiom
+     ((      tg /\ not ta /\ not  tr /\ not taf) \/
+      ( not tg /\     ta /\ not  tr /\ not taf) \/
+      ( not tg /\ not ta /\      tr /\ not taf) \/
+      ( not tg /\ not ta /\ not  tr /\     taf))  
+    =>
+    ((      tg' /\ not ta' /\ not  tr' /\ not taf') \/
+      ( not tg' /\     ta' /\ not  tr' /\ not taf') \/
+      ( not tg' /\ not ta' /\      tr' /\ not taf') \/
+      ( not tg' /\ not ta' /\ not  tr' /\     taf'))  
+   %(safety is preserved for vehicles)%;
+end
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Inductive Verification
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Copy of TransitionRelation to start a new development:
+
+spec TransitionRelation2 =
+  preds button, request, old_sh, old_sl, sh, sl, pg, pgf, pr, tg, ta, tr, taf: ();
+  preds button', request', old_sh', old_sl', sh', sl', pg', pgf', pr', tg', ta', tr', taf': ();
+  . old_sh' <=> sh;
+  . old_sl' <=> sl;
+  . sh' <=>  (old_sh' /\ not old_sl') \/  (not old_sh' /\ old_sl');
+  . sl' <=> (old_sh' /\ not old_sl') \/  (not request /\ button /\ not old_sl');
+  . request' <=> (button /\ not old_sh') \/ (button /\ not old_sl') \/ (request /\ not button /\ not old_sh') \/ (request /\ not button /\ not old_sl');
+  . pg' <=> old_sh' /\ not old_sl';
+  . pgf' <=> old_sh' /\ old_sl';
+  . pr' <=> not old_sh';
+  . tg' <=> (not old_sh' /\ not old_sl') 
+                   \/ 
+                 (not button /\ not request); 
+  . ta' <=> not old_sh' /\ old_sl'; 
+  . tr' <=> old_sh' /\ not old_sl';
+  . taf' <=> old_sh' /\ old_sl';
+end
+
+
+%% Establishing that that the formula is an invariant
+
+spec InvariantHoldsInInitalStates =
+  TransitionRelation2 
+then
+  axiom
+  not request /\ not sh  /\ not sl /\ not old_sh /\ not old_sl /\ not pg /\ not pgf /\ not pr /\ not tg /\ not ta /\ not tr /\ not taf;
+then %implies  
+  axiom
+   not ( not button' /\ not request' /\ (sh' \/ sl') )
+   %(invariant holds in initial states)%
+end
+
+spec InvariantHoldsForTransitions = 
+   TransitionRelation2
+then %implies
+  axiom
+   not (not button /\ not request /\ (sh \/ sl) )
+   =>
+   not ( not button' /\ not request' /\ (sh' \/ sl') )
+   %(invariant is preserved when making a transition)%
+end
+
+spec TransitionsAreSafeUnderInvariant = 
+   TransitionRelation2
+then %implies
+  axiom
+    not (not button /\ not request /\ (sh \/ sl) ) /\
+    ((      tg /\ not ta /\ not  tr /\ not taf) \/
+      ( not tg /\     ta /\ not  tr /\ not taf) \/
+      ( not tg /\ not ta /\      tr /\ not taf) \/
+      ( not tg /\ not ta /\ not  tr /\     taf))  
+    =>
+    ((      tg' /\ not ta' /\ not  tr' /\ not taf') \/
+      ( not tg' /\     ta' /\ not  tr' /\ not taf') \/
+      ( not tg' /\ not ta' /\      tr' /\ not taf') \/
+      ( not tg' /\ not ta' /\ not  tr' /\     taf'))  
+   %(safety is preserved for vehicles under an invariant)%;
+end

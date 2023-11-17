@@ -1,0 +1,20 @@
+%% This work is licensed under a Creative Commons
+%% Attribution-ShareAlike 4.0 International License.
+%% http://creativecommons.org/licenses/by-sa/4.0/
+
+%% Authors: Liam O'Reilly and Markus Roggenbach
+
+spec Init =
+  preds s,              %% safety light 
+        b : ()          %% blinds 
+  . not b /\ s
+end
+
+spec TransitionRelation =
+  preds s,s',          %% safety light 
+        b,b',          %% blinds 
+        i:    ()       %% input
+  
+  . s' <=> s
+  . b' <=> i \/ (not s /\ b)
+end
